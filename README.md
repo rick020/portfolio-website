@@ -1,4 +1,4 @@
-# Personal website Rick
+# Personal website Rick Bruins
 
 # **Getting started**
 
