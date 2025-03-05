@@ -14,6 +14,11 @@ npm install
 npm run dev
 ```
 
+**3. Build for production**
+```
+next build
+```
+
 ## License
 
 This project is based on the **Magic Portfolio** codebase, which is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
