@@ -74,7 +74,7 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "ASOS.com",
+        company: "ASOS.com, London",
         timeframe: "August 2022 - Present",
         role: "Senior Machine Learning Engineer",
         achievements: [
@@ -93,13 +93,38 @@ const about = {
         ],
       },
       {
-        company: "Xomnia",
+        company: "Xomnia, Amsterdam",
         timeframe: "July 2020 - June 2022",
         role: "Machine Learning Engineer",
         achievements: [
           <>
             Developed machine learning models for multiple projects serving clients in the sports retail and financial sectors.
           </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Data Science Lab, Amsterdam",
+        timeframe: "October 2019 - May 2020",
+        role: "Data Scientist",
+        achievements: [
+          <>
+            Managed dynamic pricing processes and performed market basket and traffic analysis for a retail client
+          </>,
+          <>
+            Developed an asphalt maintenance prediction dashboard for a government client, which has been adopted across multiple departments
+          </>
+        ],
+        images: [],
+      },
+      {
+        company: "KLM, Amsterdam",
+        timeframe: "July 2018 - August 2019",
+        role: "Data Scientist",
+        achievements: [
+          <>
+            Worked on cost financial time series forecasting and fraud detection within the Financial Data Analytics team.
+          </>
         ],
         images: [],
       },

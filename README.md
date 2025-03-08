@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bfa10426-74c4-4c5c-bd7e-8f78bfdc3001/deploy-status)](https://app.netlify.com/sites/rbruins/deploys)
 # Personal website Rick Bruins
 
 # **Getting started**
