@@ -3,7 +3,7 @@ const baseURL = "rickbruins.com";
 const routes = {
   "/": true,
   "/about": true,
-  "/work": false,
+  "/work": true,
 };
 
 // Enable password protection on selected routes
