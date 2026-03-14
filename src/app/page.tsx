@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Grid, Icon, Badge, Card } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Grid, Icon, Tag, Card } from "@/once-ui/components";
 
 import { baseURL } from "@/app/resources";
 import { home, about, person } from "@/app/resources/content";
@@ -57,10 +57,10 @@ export default function Home() {
       <Column fillWidth paddingY="l" gap="m">
         <Column maxWidth="s">
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="s">
-            <Flex gap="8" alignItems="center" wrap>
-              <Badge variant="neutral" size="s">
+            <Flex gap="8" style={{ alignItems: 'center' }} wrap>
+              <Tag variant="neutral" size="s">
                 {person.role}
-              </Badge>
+              </Tag>
               <Text variant="body-default-s" onBackground="neutral-weak">
                 {person.location}
               </Text>
@@ -100,7 +100,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <RevealFx translateY="16" delay={0.6} fillWidth>
-        <Grid columns="repeat(2, 1fr)" mobileColumns="1col" gap="m" fillWidth>
+        <Grid columns="2" mobileColumns="1" gap="m" fillWidth>
           <Card border="neutral-medium" background="surface" padding="m" radius="l">
             <Column gap="4">
               <Heading variant="display-strong-s" onBackground="brand-weak">6+</Heading>
@@ -120,10 +120,10 @@ export default function Home() {
       <RevealFx translateY="16" delay={0.7} fillWidth>
         <Column gap="l" fillWidth>
           <Heading variant="display-strong-m" align="center">What I Do</Heading>
-          <Grid columns="repeat(2, 1fr)" mobileColumns="1col" gap="m" fillWidth>
+          <Grid columns="2" mobileColumns="1" gap="m" fillWidth>
             <Card border="neutral-medium" background="surface" padding="l" radius="l">
               <Column gap="m">
-                <Flex gap="12" alignItems="center">
+                <Flex gap="12" style={{ alignItems: 'center' }}>
                   <Icon name="code" size="l" onBackground="brand-strong" />
                   <Heading variant="heading-strong-l">Web Development</Heading>
                 </Flex>
@@ -131,15 +131,15 @@ export default function Home() {
                   Fast, conversion-focused websites for startups and service businesses. Built with modern tech stacks for performance and SEO.
                 </Text>
                 <Flex gap="8" wrap>
-                  <Badge variant="neutral" size="s">Next.js</Badge>
-                  <Badge variant="neutral" size="s">React</Badge>
-                  <Badge variant="neutral" size="s">TypeScript</Badge>
+                  <Tag variant="neutral" size="s">Next.js</Tag>
+                  <Tag variant="neutral" size="s">React</Tag>
+                  <Tag variant="neutral" size="s">TypeScript</Tag>
                 </Flex>
               </Column>
             </Card>
             <Card border="neutral-medium" background="surface" padding="l" radius="l">
               <Column gap="m">
-                <Flex gap="12" alignItems="center">
+                <Flex gap="12" style={{ alignItems: 'center' }}>
                   <Icon name="server" size="l" onBackground="brand-strong" />
                   <Heading variant="heading-strong-l">MLOps Engineering</Heading>
                 </Flex>
@@ -147,11 +147,11 @@ export default function Home() {
                   Senior ML Engineer at Cleo. Specializing in scalable ML operations, recommendation systems, and production ML infrastructure.
                 </Text>
                 <Flex gap="8" wrap>
-                  <Badge variant="neutral" size="s">Python</Badge>
-                  <Badge variant="neutral" size="s">AWS</Badge>
-                  <Badge variant="neutral" size="s">MLOps</Badge>
-                  <Badge variant="neutral" size="s">Kubernetes</Badge>
-                  <Badge variant="neutral" size="s">Kafka</Badge>
+                  <Tag variant="neutral" size="s">Python</Tag>
+                  <Tag variant="neutral" size="s">AWS</Tag>
+                  <Tag variant="neutral" size="s">MLOps</Tag>
+                  <Tag variant="neutral" size="s">Kubernetes</Tag>
+                  <Tag variant="neutral" size="s">Kafka</Tag>
                 </Flex>
               </Column>
             </Card>

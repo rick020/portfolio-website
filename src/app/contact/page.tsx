@@ -72,7 +72,7 @@ export default function Contact() {
         <Column gap="m">
           <Card border="neutral-medium" background="surface" padding="l" radius="l">
             <Flex gap="m" direction="column">
-              <Flex gap="12" alignItems="center">
+              <Flex gap="12" style={{ alignItems: 'center' }}>
                 <Icon name="email" size="l" onBackground="brand-strong" />
                 <Column gap="4">
                   <Text variant="heading-strong-m">Email</Text>
@@ -89,7 +89,7 @@ export default function Contact() {
 
           <Card border="neutral-medium" background="surface" padding="l" radius="l">
             <Flex gap="m" direction="column">
-              <Flex gap="12" alignItems="center">
+              <Flex gap="12" style={{ alignItems: 'center' }}>
                 <Icon name="linkedin" size="l" onBackground="brand-strong" />
                 <Column gap="4">
                   <Text variant="heading-strong-m">LinkedIn</Text>
@@ -125,7 +125,7 @@ export default function Contact() {
 
         <Card border="neutral-medium" background="surface" padding="l" radius="l">
           <Column gap="m">
-            <Flex gap="12" alignItems="center">
+            <Flex gap="12" style={{ alignItems: 'center' }}>
               <Icon name="globe" size="l" onBackground="brand-strong" />
               <Text variant="heading-strong-m">Location & Availability</Text>
             </Flex>
