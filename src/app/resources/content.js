@@ -4,9 +4,9 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Software Engineer",
+  role: "MLOps Engineer & Web Developer",
   avatar: "/images/avatar.jpg",
-  location: "Europe/London", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "London, UK",
   languages: ["English", "Dutch"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -35,10 +35,11 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Web developer</>,
+  headline: <>Websites that turn visitors into customers</>,
   subline: (
     <>
-      I'm Rick, a software engineer specialised in machine learning and web development.
+      I design and build fast, conversion-focused websites for startups, service businesses, and
+      independent brands.
     </>
   ),
 };
@@ -61,9 +62,12 @@ const about = {
   intro: {
     display: true,
     title: "Introduction",
+    descriptionText:
+      "Rick is a London-based web developer focused on building performant websites that help businesses generate more leads and sales.",
     description: (
       <>
-        Rick is a London based software engineer with a passion for machine learning and web development. 
+        I am a London-based MLOps Engineer & Web Developer focused on building performant websites that help
+        businesses generate more leads and sales.
       </>
     ),
   },
@@ -71,13 +75,24 @@ const about = {
     display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
+      { company: "Cleo LTD, London", 
+        timeframe: "September 2025 - Present", 
+        role: "Senior MLOps Engineer", 
+        achievements: [
+        <>
+        Working in the Data & MLOps platform team that enables scalable ML operations.
+        </>,
+        ],
+        images: [], 
+      },
       {
         company: "ASOS.com, London",
-        timeframe: "August 2022 - Present",
+        timeframe: "August 2022 - August 2025",
         role: "Senior Machine Learning Engineer",
         achievements: [
           <>
-            I'm currently working in the Recommendation and Personalized Search team. My role involves contributing to the end-to-end development of the recommender system and supporting MLops pipelines.
+            I lead technical delivery in recommendation and personalized search, with a focus on
+            architecture, reliability, and measurable business impact.
           </>,
         ],
         images: [
@@ -96,7 +111,8 @@ const about = {
         role: "Machine Learning Engineer",
         achievements: [
           <>
-            Developed machine learning models for multiple projects serving clients in the sports retail and financial sectors.
+            Worked directly with client teams to scope, build, and ship production systems across
+            multiple industries.
           </>,
         ],
         images: [],
@@ -107,10 +123,11 @@ const about = {
         role: "Data Scientist",
         achievements: [
           <>
-            Managed dynamic pricing processes and performed market basket and traffic analysis for a retail client
+            Delivered applied analytics projects from data exploration to production-ready outputs
+            for commercial teams.
           </>,
           <>
-            Developed an asphalt maintenance prediction dashboard for a government client, which has been adopted across multiple departments
+            Built decision-support dashboards that were adopted by operational stakeholders.
           </>
         ],
         images: [],
@@ -121,7 +138,8 @@ const about = {
         role: "Data Scientist",
         achievements: [
           <>
-            Worked on cost financial time series forecasting and fraud detection within the Financial Data Analytics team.
+            Built forecasting and anomaly-detection solutions in a finance analytics environment
+            with strict quality requirements.
           </>
         ],
         images: [],
@@ -184,12 +202,26 @@ const about = {
       },
     ],
   },
+  contact: {
+    display: true,
+    title: "Contact",
+    description:
+      "Planning a new website or redesign? Send me a short brief and I will get back to you within 1 business day.",
+    primaryCta: {
+      label: "Email me",
+      link: "mailto:bruins.data@gmail.com?subject=Website%20Project%20Inquiry",
+    },
+    secondaryCta: {
+      label: "Message on LinkedIn",
+      link: "https://www.linkedin.com/in/rick-bruins/",
+    },
+  },
 };
 
 const work = {
   label: "Work",
-  title: "My projects",
-  description: `Projects by ${person.name}`,
+  title: "Client Website Projects",
+  description: `Selected web development work by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };

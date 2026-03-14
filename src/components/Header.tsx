@@ -72,6 +72,24 @@ export const Header = () => {
                   />
                 </>
               )}
+              {routes["/about"] && (
+                <>
+                  <Line vert maxHeight="24" />
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="email"
+                    href="/about#Contact"
+                    label="Contact"
+                    selected={false}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="email"
+                    href="/about#Contact"
+                    selected={false}
+                  />
+                </>
+              )}
             </Flex>
           </Flex>
         </Flex>
