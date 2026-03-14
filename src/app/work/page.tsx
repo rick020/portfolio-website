@@ -1,5 +1,5 @@
 import { getPosts } from "@/app/utils/utils";
-import { Column } from "@/once-ui/components";
+import { Column, Heading, Text } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 import { baseURL } from "@/app/resources";
 import { person, work } from "@/app/resources/content";
@@ -65,6 +65,14 @@ export default function Work() {
           }),
         }}
       />
+      <Column fillWidth gap="l" marginBottom="40" paddingX="l">
+        <Column gap="m" maxWidth="s">
+          <Heading variant="display-strong-l">{work.title}</Heading>
+          <Text variant="body-default-l" onBackground="neutral-weak">
+            {work.description}
+          </Text>
+        </Column>
+      </Column>
       <Projects />
     </Column>
   );

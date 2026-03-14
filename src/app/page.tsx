@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Grid, Icon, Badge, Card } from "@/once-ui/components";
 
 import { baseURL } from "@/app/resources";
 import { home, about, person } from "@/app/resources/content";
@@ -53,8 +53,19 @@ export default function Home() {
           }),
         }}
       />
+      {/* Hero Section */}
       <Column fillWidth paddingY="l" gap="m">
         <Column maxWidth="s">
+          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="s">
+            <Flex gap="8" alignItems="center" wrap>
+              <Badge variant="neutral" size="s">
+                {person.role}
+              </Badge>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                {person.location}
+              </Text>
+            </Flex>
+          </RevealFx>
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
@@ -87,6 +98,66 @@ export default function Home() {
         </Column>
       </Column>
 
+      {/* Stats Section */}
+      <RevealFx translateY="16" delay={0.6} fillWidth>
+        <Grid columns="repeat(2, 1fr)" mobileColumns="1col" gap="m" fillWidth>
+          <Card border="neutral-medium" background="surface" padding="m" radius="l">
+            <Column gap="4">
+              <Heading variant="display-strong-s" onBackground="brand-weak">6+</Heading>
+              <Text variant="body-default-s" onBackground="neutral-weak">Years in ML/Data</Text>
+            </Column>
+          </Card>
+          <Card border="neutral-medium" background="surface" padding="m" radius="l">
+            <Column gap="4">
+              <Heading variant="display-strong-s" onBackground="brand-weak">20+</Heading>
+              <Text variant="body-default-s" onBackground="neutral-weak">Websites Delivered</Text>
+            </Column>
+          </Card>
+        </Grid>
+      </RevealFx>
+
+      {/* What I Do Section */}
+      <RevealFx translateY="16" delay={0.7} fillWidth>
+        <Column gap="l" fillWidth>
+          <Heading variant="display-strong-m" align="center">What I Do</Heading>
+          <Grid columns="repeat(2, 1fr)" mobileColumns="1col" gap="m" fillWidth>
+            <Card border="neutral-medium" background="surface" padding="l" radius="l">
+              <Column gap="m">
+                <Flex gap="12" alignItems="center">
+                  <Icon name="code" size="l" onBackground="brand-strong" />
+                  <Heading variant="heading-strong-l">Web Development</Heading>
+                </Flex>
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  Fast, conversion-focused websites for startups and service businesses. Built with modern tech stacks for performance and SEO.
+                </Text>
+                <Flex gap="8" wrap>
+                  <Badge variant="neutral" size="s">Next.js</Badge>
+                  <Badge variant="neutral" size="s">React</Badge>
+                  <Badge variant="neutral" size="s">TypeScript</Badge>
+                </Flex>
+              </Column>
+            </Card>
+            <Card border="neutral-medium" background="surface" padding="l" radius="l">
+              <Column gap="m">
+                <Flex gap="12" alignItems="center">
+                  <Icon name="server" size="l" onBackground="brand-strong" />
+                  <Heading variant="heading-strong-l">MLOps Engineering</Heading>
+                </Flex>
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  Senior ML Engineer at Cleo. Specializing in scalable ML operations, recommendation systems, and production ML infrastructure.
+                </Text>
+                <Flex gap="8" wrap>
+                  <Badge variant="neutral" size="s">Python</Badge>
+                  <Badge variant="neutral" size="s">AWS</Badge>
+                  <Badge variant="neutral" size="s">MLOps</Badge>
+                  <Badge variant="neutral" size="s">Kubernetes</Badge>
+                  <Badge variant="neutral" size="s">Kafka</Badge>
+                </Flex>
+              </Column>
+            </Card>
+          </Grid>
+        </Column>
+      </RevealFx>
     </Column>
   );
 }

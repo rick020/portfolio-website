@@ -35,11 +35,10 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Websites that turn visitors into customers</>,
+  headline: <>Building digital experiences & ML systems that drive results</>,
   subline: (
     <>
-      I design and build fast, conversion-focused websites for startups, service businesses, and
-      independent brands.
+      Senior MLOps Engineer building scalable ML infrastructure at Cleo. Web developer creating high-converting websites for ambitious businesses. London-based, working globally.
     </>
   ),
 };
@@ -220,8 +219,8 @@ const about = {
 
 const work = {
   label: "Work",
-  title: "Client Website Projects",
-  description: `Selected web development work by ${person.name}`,
+  title: "Website Projects",
+  description: `A few of my favorite web development projects`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };

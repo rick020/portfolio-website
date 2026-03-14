@@ -2,11 +2,11 @@
 
 import {
   AvatarGroup,
-  Carousel,
   Column,
   Flex,
   Heading,
   SmartLink,
+  SmartImage,
   Text,
   Tag,
 } from "@/once-ui/components";
@@ -33,13 +33,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        images={images.map((image) => ({
-          src: image,
-          alt: title,
-        }))}
-      />
       <Flex
         mobileDirection="column"
         fillWidth
@@ -48,48 +41,59 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         paddingBottom="24"
         gap="l"
       >
-        {title && (
-          <Flex flex={5}>
+        {images.length > 0 && (
+          <Flex flex={3} horizontal="start">
+            <div style={{ maxWidth: "300px", width: "100%" }}>
+              <SmartImage
+                src={images[0]}
+                alt={title}
+                sizes="(max-width: 960px) 240px, 300px"
+                aspectRatio="4 / 3"
+                objectFit="contain"
+                radius="l"
+                border="neutral-alpha-weak"
+              />
+            </div>
+          </Flex>
+        )}
+        <Column flex={9} gap="16">
+          {title && (
             <Heading as="h2" wrap="balance" variant="heading-strong-xl">
               {title}
             </Heading>
-          </Flex>
-        )}
-        {(avatars?.length > 0 || description?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            {tag?.length > 0 && (
-              <Flex gap="12">
-                {tag.map((tagItem, index) => (
-                  <Tag key={index} variant="brand" size="m" label={tagItem} />
-                ))}
-              </Flex>
-            )}
-            <Flex gap="24" wrap>
-              <SmartLink
-                suffixIcon="arrowRight"
-                style={{ margin: "0", width: "fit-content" }}
-                href={href}
-              >
-                <Text variant="body-default-s">Read case study</Text>
-              </SmartLink>
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
+          )}
+          {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
+          {description?.trim() && (
+            <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+              {description}
+            </Text>
+          )}
+          {tag?.length > 0 && (
+            <Flex gap="12">
+              {tag.map((tagItem, index) => (
+                <Tag key={index} variant="brand" size="m" label={tagItem} />
+              ))}
             </Flex>
-          </Column>
-        )}
+          )}
+          <Flex gap="24" wrap>
+            <SmartLink
+              suffixIcon="arrowRight"
+              style={{ margin: "0", width: "fit-content" }}
+              href={href}
+            >
+              <Text variant="body-default-s">Read case study</Text>
+            </SmartLink>
+            {link && (
+              <SmartLink
+                suffixIcon="arrowUpRightFromSquare"
+                style={{ margin: "0", width: "fit-content" }}
+                href={link}
+              >
+                <Text variant="body-default-s">View project</Text>
+              </SmartLink>
+            )}
+          </Flex>
+        </Column>
       </Flex>
     </Column>
   );
