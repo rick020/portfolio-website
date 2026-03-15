@@ -9,18 +9,19 @@ interface ElementTypeProps {
   [key: string]: any;
 }
 
-const isExternalLink = (url: string) => /^https?:\/\//.test(url);
+const isExternalHttpLink = (url: string) => /^https?:\/\//.test(url);
+const isProtocolLink = (url: string) => /^(https?:\/\/|mailto:|tel:)/.test(url);
 
 const ElementType = forwardRef<HTMLElement, ElementTypeProps>(
   ({ href, children, className, style, ...props }, ref) => {
     if (href) {
-      const isExternal = isExternalLink(href);
-      if (isExternal) {
+      const isExternalHttp = isExternalHttpLink(href);
+      if (isProtocolLink(href)) {
         return (
           <a
             href={href}
-            target="_blank"
-            rel="noreferrer"
+            target={isExternalHttp ? "_blank" : undefined}
+            rel={isExternalHttp ? "noreferrer noopener" : undefined}
             ref={ref as React.Ref<HTMLAnchorElement>}
             className={className}
             style={style}

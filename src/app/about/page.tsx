@@ -66,6 +66,11 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    {
+      title: about.contact.title,
+      display: about.contact.display,
+      items: [],
+    },
   ];
   return (
     <Column maxWidth="m">
@@ -78,9 +83,9 @@ export default function About() {
             "@type": "Person",
             name: person.name,
             jobTitle: person.role,
-            description: about.intro.description,
+            description: about.intro.descriptionText,
             url: `https://${baseURL}/about`,
-            image: `${baseURL}/images/${person.avatar}`,
+            image: `https://${baseURL}${person.avatar}`,
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith("mailto:")) // Filter out empty links and email links
               .map((item) => item.link),
@@ -153,25 +158,23 @@ export default function About() {
                 {social.map(
                   (item) =>
                     item.link && (
-                        <>
-                            <Button
-                                className="s-flex-hide"
-                                key={item.name}
-                                href={item.link}
-                                prefixIcon={item.icon}
-                                label={item.name}
-                                size="s"
-                                variant="secondary"
-                            />
-                            <IconButton
-                                className="s-flex-show"
-                                size="l"
-                                key={`${item.name}-icon`}
-                                href={item.link}
-                                icon={item.icon}
-                                variant="secondary"
-                            />
-                        </>
+                      <Flex key={item.name}>
+                        <Button
+                          className="s-flex-hide"
+                          href={item.link}
+                          prefixIcon={item.icon}
+                          label={item.name}
+                          size="s"
+                          variant="secondary"
+                        />
+                        <IconButton
+                          className="s-flex-show"
+                          size="l"
+                          href={item.link}
+                          icon={item.icon}
+                          variant="secondary"
+                        />
+                      </Flex>
                     ),
                 )}
               </Flex>
@@ -311,6 +314,27 @@ export default function About() {
                     )}
                   </Column>
                 ))}
+              </Column>
+            </>
+          )}
+
+          {about.contact.display && (
+            <>
+              <Heading as="h2" id={about.contact.title} variant="display-strong-s" marginBottom="m">
+                {about.contact.title}
+              </Heading>
+              <Column fillWidth gap="12" marginBottom="40">
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  {about.contact.description}
+                </Text>
+                <Flex gap="12" wrap>
+                  <Button href={about.contact.primaryCta.link} prefixIcon="email" size="m">
+                    {about.contact.primaryCta.label}
+                  </Button>
+                  <Button href={about.contact.secondaryCta.link} variant="secondary" size="m">
+                    {about.contact.secondaryCta.label}
+                  </Button>
+                </Flex>
               </Column>
             </>
           )}

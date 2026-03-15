@@ -106,13 +106,18 @@ export default function Project({ params }: WorkParams) {
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>
       </Column>
       {post.metadata.images.length > 0 && (
-        <SmartImage
-          priority
-          aspectRatio="16 / 9"
-          radius="m"
-          alt="image"
-          src={post.metadata.images[0]}
-        />
+        <Column maxWidth="xs" fillWidth horizontal="center">
+          <div style={{ width: "50%", maxWidth: "300px" }}>
+            <SmartImage
+              priority
+              aspectRatio="4 / 3"
+              objectFit="contain"
+              radius="m"
+              alt="image"
+              src={post.metadata.images[0]}
+            />
+          </div>
+        </Column>
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <Flex gap="12" marginBottom="24" vertical="center">
